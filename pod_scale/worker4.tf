@@ -59,7 +59,7 @@ resource "azurerm_linux_virtual_machine" "kn-worker-04" {
   }
   
   provisioner "file" {
-    source      = "slave/scripts/"
+    source      = "worker/scripts/"
     destination = "/tmp/"
   }
   

@@ -1,6 +1,6 @@
 # p-k8-knative 
 
-This repo contains terrform scripts to create VM on Azure. This repo contains following files
+This repo contains terrform scripts to create Kubernetes cluster on Azure. This repo contains following files
 
 1. main.tf  -> This file is used to create resource group, virtual networks, network security group and virtual network peering across different regions. Vnet-peering is required for communication across regions. 
 2. master.tf -> This file is used to create master node. This file creates virtual machine, public ip and other things needed for connections. This file will also install k8s stuff needed for master node as well. This script will also install hey and go as well

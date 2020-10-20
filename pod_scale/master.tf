@@ -59,7 +59,7 @@ resource "azurerm_linux_virtual_machine" "main" {
   }
   
   provisioner "file" {
-    source      = "scripts/"
+    source      = "masterscripts/"
     destination = "/tmp/"
   }
   
