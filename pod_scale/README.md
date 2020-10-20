@@ -9,7 +9,7 @@ This repo contains terrform scripts to create VM on Azure. This repo contains fo
 Note: Currently only 1 worker file for each region is added here. Files can be easily replicated by changing we details. Working on automating this using script. 
 Note: To add go in your class path 'export PATH=$PATH:/usr/local/go/bin'
 
-Steps to create k8 cluster on Azure. prerequisite terraform should be installled(https://www.terraform.io/downloads.html)
+# Steps to create k8 cluster on Azure. prerequisite terraform should be installled(https://www.terraform.io/downloads.html)
 
 1. terraform init
 2. terrform plan
@@ -20,13 +20,13 @@ Above mentioned commands will create a azure k8 cluster. terraform init will int
 Once you are done with your stuff, you can destroy the infra created using 'terraform destroy' command or you can east delete resource groups created using main.tf and that will delete all the resources as well.
 
 
-Install knative-serving:
+# Install knative-serving:
 
 1. sudo bash
 2. kubectl apply --filename https://github.com/knative/serving/releases/download/v0.18.0/serving-crds.yaml
 3. kubectl apply --filename https://github.com/knative/serving/releases/download/v0.18.0/serving-core.yaml
 
-Install Istio: 
+# Install Istio: 
 1. curl -L https://istio.io/downloadIstio | sh -
 2. cat << EOF > ./istio-minimal-operator.yaml
 apiVersion: install.istio.io/v1alpha1
@@ -37,8 +37,6 @@ spec:
       proxy:
         autoInject: enabled
       useMCP: false
-      # The third-party-jwt is not enabled on all k8s.
-      # See: https://istio.io/docs/ops/best-practices/security/#configure-third-party-service-account-tokens
       jwtPolicy: first-party-jwt
 
   addonComponents:
@@ -77,7 +75,7 @@ EOF
 7. kubectl apply --filename https://github.com/knative/net-istio/releases/download/v0.18.0/release.yaml
 
 
-Install autoscaler-go :
+# Install autoscaler-go :
  
  
   1. git clone -b "master" https://github.com/knative/docs knative-docs
@@ -101,7 +99,7 @@ service/kubernetes                   ClusterIP      10.96.0.1       <none>      
  curl "http://10.110.131.84:80?sleep=100&prime=10000&bloat=5"
 
 
-Send Request using hey: 
+# Send Request using hey: 
 
 Terraform scripts will install hey and go to send requests to autocaler pod
 
